@@ -1,0 +1,560 @@
+{
+  "version": "0.1.0",
+  "name": "gamble",
+  "instructions": [
+    {
+      "name": "init",
+      "accounts": [
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "resetRate",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "percent",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "addAuth",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "auth",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "addChip",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "addGame",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "matches",
+          "type": "string"
+        },
+        {
+          "name": "endAt",
+          "type": "u32"
+        },
+        {
+          "name": "start",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "start",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "gameId",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "accounts": [
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "gameId",
+          "type": "u8"
+        },
+        {
+          "name": "result",
+          "type": "u8"
+        },
+        {
+          "name": "goal0",
+          "type": "u8"
+        },
+        {
+          "name": "goal1",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "initAsset",
+      "accounts": [
+        {
+          "name": "asset",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "player",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "airdrop",
+      "accounts": [
+        {
+          "name": "asset",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "configs",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "auth",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "chipId",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "join",
+      "accounts": [
+        {
+          "name": "player",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "asset",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "gameId",
+          "type": "u8"
+        },
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "chips",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "player",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "asset",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "gameId",
+          "type": "u8"
+        },
+        {
+          "name": "betId",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "settle",
+      "accounts": [
+        {
+          "name": "player",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "asset",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "configs",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "gameId",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Configs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authes",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "games",
+            "type": {
+              "vec": {
+                "defined": "Game"
+              }
+            }
+          },
+          {
+            "name": "chips",
+            "type": {
+              "vec": {
+                "defined": "Chip"
+              }
+            }
+          },
+          {
+            "name": "admin",
+            "type": "publicKey"
+          },
+          {
+            "name": "rate",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Asset",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bets",
+            "type": {
+              "vec": {
+                "defined": "Bet"
+              }
+            }
+          },
+          {
+            "name": "vst",
+            "type": "u32"
+          },
+          {
+            "name": "updatedAt",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "Chip",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bet",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "u8"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "chips",
+            "type": "u32"
+          },
+          {
+            "name": "state",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Game",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "code0",
+            "type": "string"
+          },
+          {
+            "name": "code1",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "type": "u8"
+          },
+          {
+            "name": "result",
+            "type": "u8"
+          },
+          {
+            "name": "betEndAt",
+            "type": "u32"
+          },
+          {
+            "name": "reward",
+            "type": "u32"
+          },
+          {
+            "name": "fee",
+            "type": "u32"
+          },
+          {
+            "name": "goal0",
+            "type": "u8"
+          },
+          {
+            "name": "goal1",
+            "type": "u8"
+          },
+          {
+            "name": "pool0",
+            "type": "u32"
+          },
+          {
+            "name": "pool1",
+            "type": "u32"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NonAdmin",
+      "msg": "Not by Admin"
+    },
+    {
+      "code": 6001,
+      "name": "Unauthorized",
+      "msg": "Not authorized"
+    },
+    {
+      "code": 6002,
+      "name": "Unsettled",
+      "msg": "Not settled up"
+    },
+    {
+      "code": 6003,
+      "name": "Started",
+      "msg": "Game has started"
+    },
+    {
+      "code": 6004,
+      "name": "NoSuchGame",
+      "msg": "No such game"
+    },
+    {
+      "code": 6005,
+      "name": "NoSuchChip",
+      "msg": "No such chip"
+    },
+    {
+      "code": 6006,
+      "name": "NoSuchBet",
+      "msg": "No such bet"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidBet",
+      "msg": "Invalid bet"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidState",
+      "msg": "Invalid state"
+    },
+    {
+      "code": 6009,
+      "name": "NSF",
+      "msg": "Not sufficent fund"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidResult",
+      "msg": "Invalid result"
+    },
+    {
+      "code": 6011,
+      "name": "YouLost",
+      "msg": "You lost"
+    },
+    {
+      "code": 6012,
+      "name": "Claimed",
+      "msg": "You've claimed"
+    },
+    {
+      "code": 6013,
+      "name": "EmptyPool",
+      "msg": "Empty pool"
+    },
+    {
+      "code": 6014,
+      "name": "Timeout",
+      "msg": "Bet timeout"
+    }
+  ],
+  "metadata": {
+    "address": "ArU6dL4f2QiJZRdTJPiZTSEsQWENywaNcbiRx1DiJPGd"
+  }
+}
