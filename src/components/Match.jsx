@@ -4,7 +4,7 @@ import moment from 'moment';
 // import "./Match.css";
 import BetDialog from './BetDialog';
 // import arg from '../../public/imgs/'
-// import teamMap from './util.js';
+// import teamMap from '../utils.js';
 // import eng from './imgs/Eng.jpg'
  const validValue = (value, min, max, decimals) => {
     let valueF = !value ? 0 : parseFloat(value)

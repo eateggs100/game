@@ -6,7 +6,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import {validValue} from './util.js'
+import {validValue} from '../utils.js'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function ValueInput(props) {
+function NumberInput(props) {
     const [value, setValue] = React.useState(1);
     const {getValue, max, unit, decimals} = props
 
@@ -64,4 +64,4 @@ function ValueInput(props) {
     );
 }
 
-export default ValueInput;
+export default NumberInput;
