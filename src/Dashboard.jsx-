@@ -79,18 +79,18 @@ export const Dashboard = () => {
 //     }) }
 
 // console.log('asset.bets'+asset.bets);
-  // const game = {
-  //   code0: 'Eng',
-  //   code1: 'Ger',
-  //   state: 1,  
-  //   bet_end_at: 1668692270, 
-  //   reward: 0, 
-  //   fee: 0,   
-  //   goal0: 0, 
-	//   goal1: 0, 
-  //   pool0: 100, 
-	//   pool1: 250, 
-  // }
+  const game = {
+    code0: 'Eng',
+    code1: 'Ger',
+    state: 1,  
+    bet_end_at: 1668692270, 
+    reward: 0, 
+    fee: 0,   
+    goal0: 0, 
+	  goal1: 0, 
+    pool0: 100, 
+	  pool1: 250, 
+  }
   const str = [];
   if(!!asset){
     console.log(asset);
