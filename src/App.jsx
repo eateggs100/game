@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react"
+import {useMemo } from "react"
 import { AssetProvider } from "./context/Asset"
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { Dashboard } from "./pages/Dashboard"
@@ -9,9 +9,7 @@ import "./App.css"
 
 
 export const App = () => {
-  // const endpoint = "https://muddy-aged-panorama.solana-devnet.discover.quiknode.pro/0fe7822c98ade63f96ae1be8e82d17b26d57cacc/"
-  const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = "https://rpc.ankr.com/solana"
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),

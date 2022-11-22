@@ -6,7 +6,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import {validValue} from '../utils.js'
 
 const useStyles = makeStyles(theme => ({
     root: {

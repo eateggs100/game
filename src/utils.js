@@ -9,8 +9,3 @@ export const validValue = (value, min, max, decimals) => {
     }
 }
 
-export const teamMap = {
-    'Arg': 'Argentine',
-    'Eng': 'England',
-    'Ger': 'Germany',
-}
