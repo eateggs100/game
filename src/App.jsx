@@ -9,8 +9,9 @@ import "./App.css"
 
 
 export const App = () => {
-  const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  // const network = WalletAdapterNetwork.Mainnet;
+  // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = "https://rpc.ankr.com/solana"
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
